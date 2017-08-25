@@ -1,8 +1,8 @@
 {
-  "name": "ionic-hello-world",
+  "name": "reddit-rss-reader",
   "version": "0.0.0",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Anderson Madeira",
+  "homepage": "https://github.com/andersonmadeira/reddit-rss-reader",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -43,5 +43,5 @@
     "cordova-plugin-console"
   ],
   "cordovaPlatforms": [],
-  "description": "Reddit RSS Reader: An Ionic project"
+  "description": "A simple Reddit rss reader"
 }

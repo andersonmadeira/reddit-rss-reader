@@ -15,6 +15,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, public http: Http) {
     this.http.get(this.url).map(res => res.json()).subscribe(data => {
       this.feeds = data.data.children;
+      console.log(this.feeds);
     });
   }
 

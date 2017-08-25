@@ -1,8 +1,11 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>
-      Reddit Reader
-    </ion-title>
+    <ion-title>Reddit Reader</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showFilters()">
+        <ion-icon name="funnel" [style.color]="hasFilter ? 'orange' : 'inherit'"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 

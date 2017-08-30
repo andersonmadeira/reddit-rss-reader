@@ -10,6 +10,8 @@ import 'rxjs/add/operator/map';
 })
 export class HomePage {
 
+  public showSearchBar: boolean = false;
+  public searchTerm: string = "";
   public feeds: Array<any>;
   public noFilter: Array<any>;
   public hasFilter: boolean = false;
@@ -103,6 +105,24 @@ export class HomePage {
     });
 
     actionSheet.present();
+  }
+
+  filterItems() {
+    this.hasFilter = false;
+    this.feeds = this.noFilter.filter((item) => {
+      return item.data.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1;
+    });
+  }
+
+  onCancel() {
+    this.showSearchBar = false;
+    this.searchTerm = "";
+    this.filterItems();
+  }
+
+  searchButtonClicked($event) {
+    this.showSearchBar = !this.showSearchBar;
+    $event.setFocus();
   }
 
 }

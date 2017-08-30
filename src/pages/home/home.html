@@ -1,7 +1,19 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>Reddit Reader</ion-title>
+    <ion-title *ngIf="!showSearchBar">Reddit Reader</ion-title>
+    <ion-searchbar
+      *ngIf="showSearchBar"
+      [(ngModel)]="searchTerm"
+      [showCancelButton]="true"
+      (ionInput)="filterItems($event)"
+      (ionCancel)="onCancel($event)"
+      [autocomplete]="on"
+      placeholder="Type here...">
+    </ion-searchbar>
     <ion-buttons end>
+      <button *ngIf="!showSearchBar" ion-button icon-only (click)="searchButtonClicked($event)">
+        <ion-icon name="search"></ion-icon>
+      </button>
       <button ion-button icon-only (click)="showFilters()">
         <ion-icon name="funnel" [style.color]="hasFilter ? 'orange' : 'inherit'"></ion-icon>
       </button>
